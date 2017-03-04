@@ -42,3 +42,15 @@
   :config
   (add-hook 'org-mode-hook (lambda() (org-bullets-mode 1))))
 
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+(defalias 'list-buffers 'ibuffer)
+;; (defalias 'list-buffers 'ibuffer-other-window)
+
+; If you like tabbar
+;(use-package tabbar
+;  :ensure t
+;  :config
+;  (tabbar-mode 1))
