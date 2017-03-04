@@ -15,6 +15,8 @@
 
 ;; my code
 (setq inhibit-startup-message t)
+(if window-system
+    (tool-bar-mode -1))
 
 (require 'package)
 (setq package-enable-at-startup nil)
