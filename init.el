@@ -7,7 +7,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auto-complete counsel swiper ace-window org-bullets try use-package)))
+    (zenburn-theme color-theme auto-complete counsel swiper ace-window org-bullets try use-package)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -107,3 +107,9 @@
     (global-auto-complete-mode t)
     ))
 
+(use-package color-theme
+  :ensure t)
+
+(use-package zenburn-theme
+  :ensure t
+  :config (load-theme 'zenburn t))
