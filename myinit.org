@@ -83,7 +83,10 @@
 (use-package avy
   :ensure t
   :bind ("M-s" . avy-goto-char))
+#+END_SRC
 
+* Autocomplete
+#+BEGIN_SRC emacs-lisp 
 (use-package auto-complete
   :ensure t
   :init
@@ -91,14 +94,20 @@
     (ac-config-default)
     (global-auto-complete-mode t)
     ))
+#+END_SRC
 
-(use-package color-theme
+* Themes
+#+BEGIN_SRC 
+  (use-package color-theme
   :ensure t)
 
-(use-package zenburn-theme
+  (use-package zenburn-theme
   :ensure t
   :config (load-theme 'zenburn t))
+
+  (load-theme 'leuven t)
 #+END_SRC
+
 * Reveal.js
   #+BEGIN_SRC emacs-lisp
 
@@ -111,3 +120,20 @@
     (use-package htmlize
       :ensure t)
   #+END_SRC
+* Flycheck
+#+BEGIN_SRC emacs-lisp
+  (use-package flycheck
+    :ensure t
+    :init
+    (global-flycheck-mode t))
+
+#+END_SRC
+* Python
+#+BEGIN_SRC emacs-lisp
+  (use-package jedi
+    :ensure t
+    :init
+    (add-hook 'python-mode-hook 'jedi:setup)
+    (add-hook 'python-mode-hook 'jedi:ac-setup))
+
+#+END_SRC
