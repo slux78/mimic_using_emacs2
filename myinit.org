@@ -22,7 +22,7 @@
     :config (which-key-mode))  
   #+END_SRC
 
-* rest
+* Org mode
 #+BEGIN_SRC emacs-lisp
 ;; Org-mode stuff
 (use-package org-bullets
@@ -33,7 +33,9 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
-
+#+END_SRC
+* Ace windows for easy window switching
+#+BEGIN_SRC emacs-lisp
 (defalias 'list-buffers 'ibuffer)
 ;; (defalias 'list-buffers 'ibuffer-other-window)
 
@@ -51,7 +53,9 @@
     (custom-set-faces
      '(aw-leading-char-face
        ((t (:inherit ace-jump-face-foreground :height 3.0)))))))
-
+#+END_SRC
+* Swiper / Ivy / Counsel
+#+BEGIN_SRC emacs-lisp
 (use-package counsel
   :ensure t
   )
@@ -156,4 +160,28 @@
     :init
     (global-undo-tree-mode))
 
+#+END_SRC
+* Misc packages
+#+BEGIN_SRC emacs-lisp
+  (global-hl-line-mode t)
+
+  ; fslashes the ucursor's line when you scroll
+  (use-package beacon
+    :ensure t
+    :config
+    (beacon-mode 1)
+    ; (setq beacon-color "#666600"))
+    )
+
+  ; deletes all the whitespace when you hit backspace or delete
+  (use-package hungry-delete
+    :ensure t
+    :config
+    (global-hungry-delete-mode))
+
+  ; expand the marked region in semantic increments (nece rgion)e  
+  (use-package expand-region
+    :ensure t
+    :config
+    (global-set-key (kbd "C-=") 'er/expand-region))
 #+END_SRC
